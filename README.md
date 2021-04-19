@@ -27,5 +27,17 @@ npm install -g expo-cli
 npm add @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
+## Starting project
+
+## Android
+```sh
+npx react-native run-android
+```
+
+## IOS
+```sh
+npx react-native run-android
+```
+
 ## License
 **Copyright, all rights reserved!**
