@@ -22,5 +22,10 @@ Downloading and unpaking latest version of [node.js](https://nodejs.org/en/downl
 npm install -g expo-cli
 ```
 
+### Setting dependences
+```sh
+npm add @react-navigation/native @react-navigation/stack react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
 ## License
 **Copyright, all rights reserved!**
