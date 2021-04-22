@@ -5,11 +5,14 @@ import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigator} from './navigators/RootNavigator';
 
+import {FooterTabs} from './navigators/FooterTabs';
+
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
+        {/* <RootNavigator /> */}
       <NavigationContainer>
-        <RootNavigator />
+        <FooterTabs />
       </NavigationContainer>
     </SafeAreaView>
   );

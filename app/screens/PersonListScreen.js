@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {FlatList, View, StyleSheet} from 'react-native';
+
 import {PersonListItem} from '../components/PersonListItem';
 
 export class PersonListScreen extends Component {
@@ -39,7 +40,7 @@ export class PersonListScreen extends Component {
   };
 
   onItemPress = (item) => {
-    this.props.navigation.navigate('info', {person: item});
+    this.props.navigation.navigate('Meh', {person: item});
   };
 
   keyExtractor = (person) => person.login.uuid;

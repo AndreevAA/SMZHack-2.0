@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity, Image, Text, View} from 'react-native';
+
 export class PersonListItem extends Component {
   render = () => {
     const {onPress, person} = this.props;
