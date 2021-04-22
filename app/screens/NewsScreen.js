@@ -5,7 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {PersonListItem} from '../components/PersonListItem';
 
-import {RootNavigator} from '../navigators/RootNavigator';
+import {RootNavigator} from '../navigators/NewsNavigator';
 
 export class NewsScreen extends Component {
   render = () => {

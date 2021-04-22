@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {Component} from 'react';
 import {SafeAreaView, StyleSheet, View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {RootNavigator} from './navigators/RootNavigator';
+import {RootNavigator} from './navigators/NewsNavigator';
 
 import {FooterTabs} from './navigators/FooterTabs';
 

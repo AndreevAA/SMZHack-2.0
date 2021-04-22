@@ -1,3 +1,9 @@
+/*
+    Это говно отвечает за то, чтобы можно было гулять между листом новостей
+    и самими новостями.
+    Пока новостей тут нет. Но есть то, куда их запихнуть.
+*/
+
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
