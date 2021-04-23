@@ -13,7 +13,7 @@ export class HomeScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.upBar}>
             <View style={styles.userView}>
-              <Image source={{uri: require('../assets/profile.png')}}
+              <Image source={require('../assets/profile.png')}
                   style={styles.avatar}
               />
               <Text style={styles.companyName}>
@@ -23,15 +23,12 @@ export class HomeScreen extends Component {
                   {user.balance}
               </Text>
               <View style={styles.notificationView}>
-                // Blyat'
               </View>
               <View style={styles.storyboard}>
-                // Tut istorii yopta
               </View>
             </View>
           </View>
         <View style={styles.bottomContainer}>
-            // Blyat' tut ostal'noe vse
         </View>
       </View>
     );
@@ -50,18 +47,18 @@ const styles = StyleSheet.create({
 
   userView: {
     flex: 1,
-    alignItems: 'left',
+    alignItems: 'flex-start',
   },
 
   avatar: {
-    margin: '10px',
+    margin: 10,
   },
 
   companyName: {
-    margin: '5px',
+    margin: 5,
   },
 
   balance: {
-    margin: '5px'
+    margin: 5
   }
 });
