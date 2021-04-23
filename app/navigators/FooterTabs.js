@@ -7,11 +7,8 @@ import React, {Component} from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {PersonListScreen} from '../screens/PersonListScreen';
 import {HomeScreen} from '../screens/HomeScreen';
-import {NewsScreen} from '../screens/NewsScreen';
-import { View } from 'react-native';
-import { RootNavigator } from './NewsNavigator';
+import { NewsNavigator } from './NewsNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +17,7 @@ export class FooterTabs extends Component {
       return (
         <Tab.Navigator>
             <Tab.Screen name="Главная" component={HomeScreen}/>
-            <Tab.Screen name="Новости" component={RootNavigator} />
+            <Tab.Screen name="Новости" component={NewsNavigator} />
         </Tab.Navigator>
       );
     };

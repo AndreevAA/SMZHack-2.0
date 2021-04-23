@@ -7,15 +7,16 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import {HomeScreen} from '../screens/HomeScreen';
 import {PersonListScreen} from '../screens/PersonListScreen';
 import {PersonInfoScreen} from '../screens/PersonInfoScreen';
 
 const Stack = createStackNavigator();
 
-export const RootNavigator = () => {
+export const NewsNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName={'News'}>
-      <Stack.Screen name={'News'} component={PersonListScreen} />
+    <Stack.Navigator initialRouteName={'Новости'}>
+      <Stack.Screen name={'Новости'} component={PersonListScreen} />
       <Stack.Screen name={'Новость'} component={PersonInfoScreen} />
     </Stack.Navigator>
   );

@@ -1,26 +1,28 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text} from 'react-native';
 
+import {LoginScreen} from "react-native-login-screen";
 
 const user = {
                 balance: '200000R',
                 companyName: 'TassovCompany',
                 avatar: {medium: '../assets/profile.png'}}
 
-export class LoginScreen extends Component {
+export class LoginScreenComp extends Component {
   render = () => {
     return (
         <View style={styles.mainContainer}>
-            <Text
-            onPress={() => {
-                this.props.navigation.navigate('Home');
-            }}
-            >{"Ну тут типа логин"}</Text>
-      </View>
+            <LoginScreen />
+        </View>
     );
-  };
+};
 }
 
+{/* <Text
+onPress={() => {
+    this.props.navigation.navigate('HomeNav');
+}}
+>{"Ну тут типа логин"}</Text> */}
 const styles = StyleSheet.create({
   container: {
     flex: 1,

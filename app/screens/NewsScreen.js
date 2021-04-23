@@ -5,14 +5,14 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {PersonListItem} from '../components/PersonListItem';
 
-import {RootNavigator} from '../navigators/NewsNavigator';
+import {NewsNavigator} from '../navigators/NewsNavigator';
 
 export class NewsScreen extends Component {
   render = () => {
     return (
       <SafeAreaView style={styles.container}>
         <NavigationContainer>
-          <RootNavigator />
+          <NewsNavigator />
         </NavigationContainer>
       </SafeAreaView>
     );
