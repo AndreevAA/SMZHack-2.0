@@ -5,7 +5,7 @@ export class HomeScreen extends Component {
   render = () => {
     return (
       <View style={styles.container}>
-          <Text>{"Ну это домашний экран"}</Text>
+          <Text>{"ЕПТ домашний экран"}</Text>
       </View>
     );
   };

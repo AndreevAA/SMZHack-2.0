@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Image, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import { WebView } from 'react-native-webview';
 
 export class PersonInfoScreen extends Component {
   renderRow = (cells) => {
@@ -12,23 +13,9 @@ export class PersonInfoScreen extends Component {
   };
 
   render = () => {
-    const {person} = this.props.route.params;
-
+    const {post} = this.props.route.params;
     return (
-      <View style={styles.container}>
-        <Image
-          source={{uri: person.picture.large}}
-          style={styles.avatar}
-          resizeMode={'contain'}
-        />
-        {this.renderRow([
-          {title: 'login', value: person.login.username},
-          {title: 'name', value: person.name.first},
-          {title: 'surname', value: person.name.last},
-          {title: 'email', value: person.email},
-          {title: 'phone', value: person.cell},
-        ])}
-      </View>
+        <WebView source={{ uri: post.links[0].url }} />
     );
   };
 }

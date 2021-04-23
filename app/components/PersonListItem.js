@@ -32,20 +32,19 @@ import {StyleSheet, TouchableOpacity, Image, Text, View} from 'react-native';
 
 export class PersonListItem extends Component {
   render = () => {
-    const {onPress, person} = this.props;
-
+    const {onPress, post} = this.props;
     return (
       <TouchableOpacity style={styles.container} onPress={onPress}>
         <Image
-          source={{uri: person.picture.medium}}
+          source={{uri: post.enclosures[0] ? post.enclosures[0].url : "https://gohtml.ru/images/news/32--14-03-31--12-00-00.png"}}
           resizeMode={'contain'}
           style={styles.avatar}
         />
         <View style={styles.col}>
           <Text style={styles.name}>
-            {person.name.first} {person.name.last}
+            {post.title}
           </Text>
-          <Text style={styles.email}>{person.email}</Text>
+          <Text style={styles.email}>{post.description}</Text>
         </View>
       </TouchableOpacity>
     );

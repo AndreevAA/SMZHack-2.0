@@ -16,7 +16,7 @@ export const RootNavigator = () => {
   return (
     <Stack.Navigator initialRouteName={'News'}>
       <Stack.Screen name={'News'} component={PersonListScreen} />
-      <Stack.Screen name={'Meh'} component={PersonInfoScreen} />
+      <Stack.Screen name={'Новость'} component={PersonInfoScreen} />
     </Stack.Navigator>
   );
 };

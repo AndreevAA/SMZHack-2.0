@@ -19,8 +19,8 @@ export class FooterTabs extends Component {
     render = () => {
       return (
         <Tab.Navigator>
-            <Tab.Screen name="Home" component={HomeScreen}/>
-            <Tab.Screen name="News" component={RootNavigator} />
+            <Tab.Screen name="Главная" component={HomeScreen}/>
+            <Tab.Screen name="Новости" component={RootNavigator} />
         </Tab.Navigator>
       );
     };
