@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
-import {StyleSheet, View, Image, Text} from 'react-native';
+import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 const user = {
-                balance: '200000R',
-                companyName: 'TassovCompany',
-                avatar: {medium: '../assets/profile.png'}}
+                balance: '1000000',
+                companyName: 'OOO Клинер Инвестмент',
+                avatar: {medium: './profile.png'}
+};
 
 export class HomeScreen extends Component {
   render = () => {
@@ -13,21 +15,55 @@ export class HomeScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.upBar}>
             <View style={styles.userView}>
-              <Image source={require('../assets/profile.png')}
+              <Image source={require('./profile.png')}
                   style={styles.avatar}
               />
               <Text style={styles.companyName}>
                   {user.companyName}
-              </Text>
-              <Text style={styles.balance}>
-                  {user.balance}
               </Text>
               <View style={styles.notificationView}>
               </View>
               <View style={styles.storyboard}>
               </View>
             </View>
+            <Text style={styles.balance}>
+              Баланс: {user.balance}
+            </Text>
+
           </View>
+            <TouchableOpacity
+                activeOpacity={1}
+                style={{
+                    backgroundColor: 'white',
+                    alignSelf: 'flex-end',
+                    zIndex: 1,
+                    borderRadius: 20,
+                    height: 40,
+                    width: 40,
+                    bottom: 15,
+                }}
+                onPress={()=>{this.props.navigation.navigate('Cart')}}>
+                {
+                    <Text
+                        style={{
+                            backgroundColor: 'white',
+                            alignSelf: 'flex-end',
+                            color: '#000000',
+                            fontSize: 10,
+                            zIndex: 1,
+                            position: 'absolute',
+                            width: 15,
+                            textAlign: 'center',
+                            bottom: 15,
+                            height: 15,
+                            borderRadius: 8,
+                            marginBottom: 10,
+                        }}>
+                        {'4'}
+                    </Text>
+                }
+                <Icon name={"bell-o"} color={'#4CA64B'} size={24} style={{marginTop: 6, marginLeft: 6}}/>
+            </TouchableOpacity>
         <View style={styles.bottomContainer}>
         </View>
       </View>
@@ -42,23 +78,33 @@ const styles = StyleSheet.create({
   },
 
   mainContainer: {
-    backgroundColor: '#00ff00',
+    backgroundColor: '#4CA64B',
   },
 
   userView: {
     flex: 1,
-    alignItems: 'flex-start',
+    alignItems: 'center',
+    flexDirection: "row",
+    marginTop: 50,
+    marginLeft: 10,
   },
 
   avatar: {
-    margin: 10,
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
   },
 
   companyName: {
-    margin: 5,
+    marginLeft: 10,
+    fontSize: 20,
+    fontWeight: "bold",
+    color: '#FFFFFF'
   },
 
   balance: {
-    margin: 5
+    marginLeft: 60,
+    marginTop: 10,
+    color: '#FFFFFF'
   }
 });

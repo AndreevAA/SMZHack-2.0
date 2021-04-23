@@ -27,7 +27,9 @@
     "react-native-screens": "^3.1.1",
     "react-native-web": "^0.15.7",
     "react-native-webview": "^11.4.2",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "@expo/vector-icons": "latest",
+    "react-native-vector-icons": "latest"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"
