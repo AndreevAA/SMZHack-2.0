@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import {FlatList, View, StyleSheet} from 'react-native';
 
-import {PersonListItem} from '../components/PersonListItem';
+import {NewsListItem} from '../components/PersonListItem';
 
 import * as rssParser from 'react-native-rss-parser';
 
-export class PersonListScreen extends Component {
+export class NewsListScreen extends Component {
   state = {
     list: [],
     isLoading: false,
@@ -50,7 +50,7 @@ export class PersonListScreen extends Component {
 
   renderItem = ({item}) => {
     return (
-      <PersonListItem
+      <NewsListItem
         post={item}
         onPress={this.onItemPress.bind(this, item)}
       />
@@ -80,5 +80,6 @@ export class PersonListScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:20,
   },
 });

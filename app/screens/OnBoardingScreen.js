@@ -1,4 +1,4 @@
-import { Image } from 'react-native';
+import { Image, Button } from 'react-native';
 import React, {Component} from 'react';
 
 import Onboarding from 'react-native-onboarding-swiper';
@@ -9,27 +9,34 @@ export class OnBoardingScreen extends Component {
       <Onboarding
       
       onDone={() => {
-        this.props.navigation.navigate('Login');
+        this.props.navigation.navigate('Entry');
       }}
-  
+
+      onSkip={() => {
+        this.props.navigation.navigate('Entry');
+      }}
+      
+      nextLabel={'Далее'}
+      skipLabel={'Пропустить'}
+
       pages={[
         {
           backgroundColor: '#fff',
-          image: <Image source={require('../assets/images/circle.png')} />,
-          title: 'Onboarding',
-          subtitle: 'Done with React Native Onboarding Swiper',
+          image: <Image source={require('../assets/images/clock.png')} />,
+          title: 'Наймикс и хуё моё',
+          subtitle: 'Ну тут типа какой-то текст.',
         },
         {
-          backgroundColor: '#fe6e58',
-          image: <Image source={require('../assets/images/square.png')} />,
-          title: 'The Title',
-          subtitle: 'This is the subtitle that sumplements the title.',
+          backgroundColor: '#fff',
+          image: <Image source={require('../assets/images/pig.png')} />,
+          title: 'Деньги',
+          subtitle: 'Ебать свинья там жирная, да?',
         },
         {
-          backgroundColor: '#999',
-          image: <Image source={require('../assets/images/triangle.png')} />,
-          title: 'Triangle',
-          subtitle: "Beautiful, isn't it?",
+          backgroundColor: '#fff',
+          image: <Image source={require('../assets/images/list.png')} />,
+          title: 'Большой листок',
+          subtitle: "Сейчас бы себе тетрадь больше себя делать...",
         },
       ]}
     />

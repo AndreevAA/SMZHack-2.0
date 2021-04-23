@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import { WebView } from 'react-native-webview';
 
-export class PersonInfoScreen extends Component {
+export class NewsItemView extends Component {
   renderRow = (cells) => {
     return cells.map((cell) => (
       <View style={styles.cell} key={cell.title}>

@@ -8,16 +8,16 @@ import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
 import {HomeScreen} from '../screens/HomeScreen';
-import {PersonListScreen} from '../screens/PersonListScreen';
-import {PersonInfoScreen} from '../screens/PersonInfoScreen';
+import {NewsListScreen} from '../screens/PersonListScreen';
+import {NewsItemView} from '../screens/NewsWebViewScreen';
 
 const Stack = createStackNavigator();
 
 export const NewsNavigator = () => {
   return (
     <Stack.Navigator initialRouteName={'Новости'}>
-      <Stack.Screen name={'Новости'} component={PersonListScreen} />
-      <Stack.Screen name={'Новость'} component={PersonInfoScreen} />
+      <Stack.Screen name={'Новости'} component={NewsListScreen} />
+      <Stack.Screen name={'Новость'} component={NewsItemView} />
     </Stack.Navigator>
   );
 };

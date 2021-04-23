@@ -30,7 +30,7 @@ import {StyleSheet, TouchableOpacity, Image, Text, View} from 'react-native';
 // }
 
 
-export class PersonListItem extends Component {
+export class NewsListItem extends Component {
   render = () => {
     const {onPress, post} = this.props;
     return (
@@ -40,11 +40,13 @@ export class PersonListItem extends Component {
           resizeMode={'contain'}
           style={styles.avatar}
         />
+
         <View style={styles.col}>
-          <Text style={styles.name}>
+          <Text style={styles.title}>
             {post.title}
           </Text>
-          <Text style={styles.email}>{post.description}</Text>
+
+          <Text style={styles.brief}>{post.description}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -60,18 +62,20 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.4,
   },
   avatar: {
-    width: 50,
-    height: 50,
+    width: 80,
+    height: 80,
     borderRadius: 25,
   },
   col: {
     marginLeft: 10,
+    marginRight: 10,
+    paddingRight: 60,
   },
-  name: {
+  title: {
     fontSize: 16,
     color: '#2e2e2e',
   },
-  email: {
+  brief: {
     marginTop: 10,
     fontSize: 13,
     color: '#b0b0b0',

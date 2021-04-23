@@ -1,13 +1,10 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {LoginScreenComp} from '../screens/LoginScreen';
 import {OnBoardingScreen} from '../screens/OnBoardingScreen';
-import {HomeScreen} from '../screens/HomeScreen';
 import {FooterTabs} from './FooterTabs';
 
-import {PersonListScreen} from '../screens/PersonListScreen';
-import {PersonInfoScreen} from '../screens/PersonInfoScreen';
+import { EntryScreen } from '../screens/EntryScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,7 +15,7 @@ export const OnBoardingNavigator = () => {
             headerShown: false
         }}>
       <Stack.Screen name={'Onboarding'} component={OnBoardingScreen} />
-      <Stack.Screen name={'Login'} component={LoginScreenComp} />
+      <Stack.Screen name={'Entry'} component={EntryScreen} />
       <Stack.Screen name={'HomeNav'} component={FooterTabs} />
     </Stack.Navigator>
   );
