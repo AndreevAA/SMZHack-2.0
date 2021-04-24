@@ -14,7 +14,9 @@ const Stack = createStackNavigator();
 
 export const NewsNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName={'Новости'}>
+    <Stack.Navigator screenOptions={{
+        headerShown: false
+    }} initialRouteName={'Новости'}>
       <Stack.Screen name={'Новости'} component={NewsListScreen} />
       <Stack.Screen name={'Новость'} component={NewsItemView} />
     </Stack.Navigator>

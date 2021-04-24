@@ -7,7 +7,7 @@ import {Backdrop} from 'react-native-backdrop';
 
 const user = {
                 balance: '1000000',
-                companyName: 'OOO Клинер Инвестмент',
+                companyName: 'OOO ФРЕШ ПРОДАКТС',
                 avatar: {medium: './profile.png'}
 };
 

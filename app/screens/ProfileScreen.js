@@ -3,7 +3,7 @@ import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-
 
 const user = {
     balance: '1000000',
-    companyName: 'OOO Клинер Инвестмент',
+    companyName: 'OOO ФРЕШ ПРОДАКТС',
     avatar: {medium: './profile.png'}
 };
 
@@ -11,16 +11,24 @@ export class ProfileScreen extends Component {
     render = () => {
         return (
             <View style={styles.container}>
-                <Text style={styles.logo}>НАЙМИКС</Text>
-                <Text style={styles.sublogo}>Вход в приложение НАЙМИКС ДИРЕКТОР</Text>
-                <TouchableOpacity>
-                    <Text style={styles.forgot}>Забыли пароль?</Text>
-                </TouchableOpacity>
+                <Image source={require('./profile.png')}
+                       style={styles.avatar}
+                />
+                <Text style={styles.name}>
+                    OOO ФРЕШ ПРОДАКТС
+                </Text>
                 <TouchableOpacity style={styles.loginBtn} onPress={() => {
                     this.props.navigation.navigate('История заказов')}}>
-                    <Text style={styles.loginText}>Войти</Text>
+                    <Text style={styles.loginText}>ИСТОРИЯ ЗАКАЗОВ</Text>
                 </TouchableOpacity>
-
+                <TouchableOpacity style={styles.loginBtn} onPress={() => {
+                    this.props.navigation.navigate('Настройки')}}>
+                    <Text style={styles.loginText}>НАСТРОЙКИ</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginBtn} onPress={() => {
+                    this.props.navigation.navigate('Выйти')}}>
+                    <Text style={styles.loginText}>ВЫЙТИ</Text>
+                </TouchableOpacity>
             </View>
         );
     };
@@ -30,8 +38,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#FFFF',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'center',
     },
 
     sublogo:{
@@ -47,42 +55,40 @@ const styles = StyleSheet.create({
         color:"#4CA64B",
         marginBottom:40,
     },
-    inputView:{
-        width:"80%",
-        backgroundColor:"#FFFF",
-        borderRadius:25,
-        height:50,
-        marginBottom:20,
-        justifyContent:"center",
-        padding:20,
-        borderWidth: 1,
-        borderColor: '#828282'
-    },
+
     inputText:{
         height:50,
         color:"black",
     },
-    forgot:{
-        fontWeight:"bold",
-        color:"black",
-        fontSize:14,
-        marginTop: 20,
-        marginBottom: 100
-    },
     loginBtn:{
         width:"80%",
-        backgroundColor:"#4CA64B",
-        borderRadius:25,
-        height:50,
-        alignItems:"center",
-        justifyContent:"center",
-        marginTop:40,
+        // backgroundColor:"#4CA64B",
+        // borderRadius:25,
+        // height:50,
+        // marginTop:40,
+        marginLeft: 50,
         marginBottom:10
     },
     loginText:{
-        color:"white",
+        color:"black",
         fontWeight:"bold",
-        fontSize: 16
-    }
+        fontSize: 20
+    },
+    avatar: {
+        width: 100,
+        height: 100,
+        marginTop: 50,
+        marginLeft: 155,
+        resizeMode: 'contain',
+    },
+    name: {
+        marginTop: 10,
+        marginBottom: 70,
+        marginLeft: 85,
+        // resizeMode: 'contain',
+        color:"black",
+        fontWeight:"bold",
+        fontSize: 20
+    },
 });
 
