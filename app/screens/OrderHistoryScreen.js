@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {OrderListItem} from "../components/OrderListItem";
 import SwipeActionList from 'react-native-swipe-action-list';
+import { Snackbar } from 'react-native-paper';
 
 
 export class OrderHistoryScreen extends Component {
@@ -157,6 +158,16 @@ export class OrderHistoryScreen extends Component {
             elem.status === "Новая" ? "Оплачена" : "Отложена" ;
         list.push(elem);
         this.setState({list: list, isLoading: true});
+
+        Snackbar.show({
+            text: 'Отложено',
+            duration: Snackbar.LENGTH_SHORT,
+            action: {
+                text: 'Отменить',
+                textColor: '#4CA64B',
+                onPress: () => { /* Do something. */ },
+            },
+        });
     };
 
     onPressLeft = () => {
@@ -169,6 +180,15 @@ export class OrderHistoryScreen extends Component {
         list.push(elem);
         this.setState({list: list, isLoading: true});
 
+        Snackbar.show({
+            text: 'Оплачено',
+            duration: Snackbar.LENGTH_SHORT,
+            action: {
+                text: 'Отменить',
+                textColor: '#4CA64B',
+                onPress: () => { /* Do something. */ },
+            },
+        });
         // сменить баланс
     };
 
@@ -204,7 +224,19 @@ export class OrderHistoryScreen extends Component {
                     onSwipeLeft={this.toPayedItems}
                     onSwipeRight={this.toDelayedItems}
                 />
+                {/*<Snackbar*/}
+                {/*    visible={true}*/}
+                {/*    // onDismiss={onDismissSnackBar}*/}
+                {/*    action={{*/}
+                {/*        label: 'Undo',*/}
+                {/*        onPress: () => {*/}
+
+                {/*        },*/}
+                {/*    }}>*/}
+                {/*    Hey there! I'm a Snackbar.*/}
+                {/*</Snackbar>*/}
             </View>
+
         );
     };
 }
