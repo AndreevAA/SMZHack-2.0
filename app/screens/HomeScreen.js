@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {rgbaColor} from "react-native-reanimated/src/reanimated2/Colors";
 
 const user = {
                 balance: '1000000',
@@ -15,11 +15,15 @@ export class HomeScreen extends Component {
         <View style={styles.mainContainer}>
           <View style={styles.upBar}>
             <View style={styles.userView}>
-              <Image source={require('./profile.png')}
-                  style={styles.avatar}
-              />
+                <View style={styles.iconStyle}>
+                    <Image source={require('./profile.png')}
+                           style={styles.avatar}>
+
+                    </Image>
+                </View>
+
               <Text style={styles.companyName}>
-                  {user.companyName}
+                  {user.companyName}x
               </Text>
               <View style={styles.notificationView}>
               </View>
@@ -89,10 +93,17 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
 
-  avatar: {
+    iconStyle: {
+        shadowColor: rgbaColor(0, 0, 0, 0.25),
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+    },
+
+    avatar: {
     width: 50,
     height: 50,
     resizeMode: 'contain',
+
   },
 
   companyName: {
