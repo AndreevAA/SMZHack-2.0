@@ -7,7 +7,6 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {HomeScreen} from '../screens/HomeScreen';
 import {NewsListScreen} from '../screens/PersonListScreen';
 import {NewsItemView} from '../screens/NewsWebViewScreen';
 
