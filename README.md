@@ -3,7 +3,7 @@
 ## Description
 This [SMZHack-2.0](https://github.com/AndreevAA/SMZHack-2.0) contains all materials and infomation performed during the period of taking part in [SMZHack-2.0](https://smzhack.ru/).
 
-Screen Makets are availiable by the [link](https://github.com/AndreevAA/SMZHack-2.0) https://www.figma.com/file/ogZY0QGjtFJVkFGgJcQA8Q/naimix?node-id=0%3A1).
+Screen Makets are availiable by the [link](https://www.figma.com/file/ogZY0QGjtFJVkFGgJcQA8Q/naimix?node-id=0%3A1).
 
 ## Content
 
