@@ -1,5 +1,5 @@
 import {createStackNavigator} from "@react-navigation/stack";
-import {NewsListScreen} from "../screens/PersonListScreen";
+import {BlankScreen} from "../screens/BlankPage";
 import {NewsItemView} from "../screens/NewsWebViewScreen";
 import * as React from 'react';
 import {ProfileScreen} from "../screens/ProfileScreen";
@@ -10,9 +10,9 @@ export const ProfileNavigator = () => {
     return (
         <Stack.Navigator initialRouteName={'Новости'}>
             <Stack.Screen name={'Профиль'} component={ProfileScreen} />
-            <Stack.Screen name={'История заказов'} component={NewsItemView} />
-            <Stack.Screen name={'Настройки'} component={NewsItemView} />
-            <Stack.Screen name={'Выйти'} component={NewsItemView} />
+            <Stack.Screen name={'История заказов'} component={BlankScreen} />
+            <Stack.Screen name={'Настройки'} component={BlankScreen} />
+            <Stack.Screen name={'Выйти'} component={BlankScreen} />
         </Stack.Navigator>
     );
 };

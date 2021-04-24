@@ -1,8 +1,6 @@
 import React, {Component, useState} from 'react';
 import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native';
 
-import {LoginScreen} from 'react-native-login-screen';
-
 const user = {
     balance: '1000000',
     companyName: 'OOO Клинер Инвестмент',
@@ -27,12 +25,6 @@ export class ProfileScreen extends Component {
         );
     };
 }
-
-{/* <Text
-onPress={() => {
-    this.props.navigation.navigate('HomeNav');
-}}
->{"Ну тут типа логин"}</Text> */}
 
 const styles = StyleSheet.create({
     container: {

@@ -1,11 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native'
 
-const user = {
-                balance: '200000R',
-                companyName: 'TassovCompany',
-                avatar: {medium: '../assets/profile.png'}}
-
 export class EntryScreen extends Component {
   render = () => {
     return (

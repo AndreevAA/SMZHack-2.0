@@ -5,6 +5,7 @@ import {OnBoardingScreen} from '../screens/OnBoardingScreen';
 import {FooterTabs} from './FooterTabs';
 
 import { EntryScreen } from '../screens/EntryScreen';
+import { BlankScreen } from '../screens/BlankPage';
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export const OnBoardingNavigator = () => {
       {/* <Stack.Screen name={'Onboarding'} component={OnBoardingScreen} /> */}
       <Stack.Screen name={'Entry'} component={EntryScreen} />
       <Stack.Screen name={'HomeNav'} component={FooterTabs} />
+      <Stack.Screen name={'Blank'} component={BlankScreen} />
     </Stack.Navigator>
   );
 };
