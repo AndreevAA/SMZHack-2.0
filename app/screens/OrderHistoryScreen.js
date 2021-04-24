@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, FlatList, View, StyleSheet} from 'react-native';
+import {Text, TouchableOpacity, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {OrderListItem} from "../components/OrderListItem";
@@ -8,42 +8,49 @@ import SwipeActionList from 'react-native-swipe-action-list';
 
 export class OrderHistoryScreen extends Component {
     state = {
-        list: [
-            {
-                "title" : "name",
-                "completed" : "2021-10-11",
-                "price" : "15000",
-                "executors" : ["exe 1", "exe 2"],
-                "status" : "Новая",
-                "object" : "obj"
-            },
-            {
-                "title" : "name2",
-                "completed" : "2021-10-11",
-                "price" : "20000",
-                "executors" : ["exe 1"],
-                "status" : "Новая",
-                "object" : "obj"
-            },
-            {
-                "title" : "name3",
-                "completed" : "2021-10-11",
-                "price" : "20000",
-                "executors" : ["exe 1"],
-                "status" : "Новая",
-                "object" : "obj"
-            },
-            {
-                "title" : "name4",
-                "completed" : "2021-10-11",
-                "price" : "20000",
-                "executors" : ["exe 1"],
-                "status" : "Новая",
-                "object" : "obj"
-            }
-        ],
-        isLoading: false,
-    };
+            list: [
+                {
+                    "id" : "1",
+                    "title" : "Работник торгого зала",
+                    "completed" : "2021.10.11",
+                    "price" : "15 000",
+                    "executors" : ["Андреев А.А"],
+                    "status" : "Новая",
+                    "object" : "ТРЦ Филион"
+                },
+                {
+                    "id" : "2",
+                    "title" : "Услуги по консультированию клинентов",
+                    "completed" : "2021.10.11",
+                    "price" : "20 000",
+                    "executors" : ["Елисеев В.А"],
+                    "status" : "Новая",
+                    "object" : "ТРЦ Филион"
+                },
+                {
+                    "id" : "3",
+                    "title" : "Создание сайта",
+                    "completed" : "2021.10.21",
+                    "price" : "60 000",
+                    "executors" : ["Анна Н. Г."],
+                    "status" : "Новая",
+                    "object" : "(без объекта)"
+                },
+                {
+                    "id" : "4",
+                    "title" : "Группа: (5) Разработка мобильного приложения",
+                    "completed" : "2021.10.11",
+                    "price" : "300 000",
+                    "executors" : ["Андрей Н. Г", "Николай Н. Г", "..."],
+                    "status" : "Новая",
+                    "object" : "(без объекта)"
+                }
+            ],
+            isLoading: false,
+            key: "",
+        };
+
+
 
     componentDidMount = () => {
         this.onRefresh();
@@ -77,11 +84,24 @@ export class OrderHistoryScreen extends Component {
         // this.getMoreData(false);
     };
 
+    toPayedItems = (key) => {
+      console.log("key is " + key);
+      this.state.key = key;
+      // this.state.list.push(this.state.list.find(f => f.id === key))
+
+    };
+
+    toDelayedItems = (key) => {
+      console.log("key is del " + key);
+      this.state.key = key;
+    };
+
+
     onItemPress = (item) => {
         this.props.navigation.navigate('Blank', {order: item});
     };
 
-    keyExtractor = (order) => order.title;
+    keyExtractor = (order) => order.id;
 
     renderItem = ({item}) => {
         return (
@@ -92,35 +112,61 @@ export class OrderHistoryScreen extends Component {
         );
     };
 
+    onPressRight = () => {
+        console.log("PRESSED " + this.state.key + " / " + this.state.list);
+        let elem = this.state.list.find(f => f.id === this.state.key);
+        console.log("elem " + Object.keys(elem));
+        let list = this.state.list.filter(f => f.id !== this.state.key);
+        elem.status = elem.status === "Отложена" ? "Оплачена" :
+            elem.status === "Новая" ? "Оплачена" : "Отложена" ;
+        list.push(elem);
+        this.setState({list: list, isLoading: true});
+    };
+
+    onPressLeft = () => {
+        console.log("PRESSED " + this.state.key + " / " + this.state.list);
+
+        let elem = this.state.list.find(f => f.id === this.state.key);
+        console.log("elem " + Object.keys(elem));
+        let list = this.state.list.filter(f => f.id !== this.state.key);
+        elem.status = "Отложена";
+        list.push(elem);
+        this.setState({list: list, isLoading: true});
+
+        // сменить баланс
+    };
+
     render = () => {
         const {isLoading, list} = this.state;
+
         return (
             <View>
                 <SwipeActionList
                     style={styles.container}
-                    data={list}
+                    data={this.state.list}
                     renderItem={this.renderItem}
                     keyExtractor={this.keyExtractor}
-                    // refreshing={isLoading}
-                    // onRefresh={this.onRefresh}
                     onEndReached={this.onScrollToEnd}
                     onEndReachedThreshold={0.2}
-                    renderLeftHiddenItem={() => <View  style={{
+                    renderLeftHiddenItem={() => <TouchableOpacity  style={{
                         width: 400,
                         height: 150,
-                        backgroundColor:'#4CA64B',
+                        backgroundColor: isLoading ? '#4CA64B' : 'red',
                         marginTop: 5,
-                    }}>
+                    }} onPress={this.onPressLeft}>
                         <Icon name={'check-circle'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 20}}/>
-                        </View>}
-                    renderRightHiddenItem={() =>  <View style={{
+                        </TouchableOpacity>}
+                    renderRightHiddenItem={() =>  <TouchableOpacity style={{
                         width: 400,
                         height: 150,
                         backgroundColor:'#BFD154',
-                        marginTop: 5,
-                    }}>
+                        marginTop: 5
+                    }}
+                    onPress={this.onPressRight}>
                         <Icon name={'inbox'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 320}}/>
-                    </View>}
+                    </TouchableOpacity>}
+                    onSwipeLeft={this.toPayedItems}
+                    onSwipeRight={this.toDelayedItems}
                 />
             </View>
         );
@@ -133,6 +179,5 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         marginRight: 20,
         marginBottom: 20,
-
     },
 });
