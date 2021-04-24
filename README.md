@@ -3,6 +3,8 @@
 ## Description
 This [SMZHack-2.0](https://github.com/AndreevAA/SMZHack-2.0) contains all materials and infomation performed during the period of taking part in [SMZHack-2.0](https://smzhack.ru/).
 
+Screen Makets are availiable by the [link](https://github.com/AndreevAA/SMZHack-2.0) https://www.figma.com/file/ogZY0QGjtFJVkFGgJcQA8Q/naimix?node-id=0%3A1.
+
 ## Content
 
 ## Cloning
@@ -19,7 +21,7 @@ Downloading and unpaking latest version of [node.js](https://nodejs.org/en/downl
 
 ### Installing CLI
 ```sh
-npm install -g expo-cli
+npm install --global expo-cli
 ```
 
 ### Setting dependences
@@ -29,14 +31,8 @@ npm add @react-navigation/native @react-navigation/stack react-native-reanimated
 
 ## Starting project
 
-## Android
 ```sh
-npx react-native run-android
-```
-
-## IOS
-```sh
-npx react-native run-android
+npm start
 ```
 
 ## License
