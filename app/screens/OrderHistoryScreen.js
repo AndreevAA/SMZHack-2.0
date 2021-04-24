@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {OrderListItem} from "../components/OrderListItem";
 import SwipeActionList from 'react-native-swipe-action-list';
+import { Snackbar } from 'react-native-paper';
 
 
 export class OrderHistoryScreen extends Component {
@@ -121,6 +122,16 @@ export class OrderHistoryScreen extends Component {
             elem.status === "Новая" ? "Оплачена" : "Отложена" ;
         list.push(elem);
         this.setState({list: list, isLoading: true});
+
+        Snackbar.show({
+            text: 'Отложено',
+            duration: Snackbar.LENGTH_SHORT,
+            action: {
+                text: 'Отменить',
+                textColor: '#4CA64B',
+                onPress: () => { /* Do something. */ },
+            },
+        });
     };
 
     onPressLeft = () => {
@@ -133,6 +144,15 @@ export class OrderHistoryScreen extends Component {
         list.push(elem);
         this.setState({list: list, isLoading: true});
 
+        Snackbar.show({
+            text: 'Оплачено',
+            duration: Snackbar.LENGTH_SHORT,
+            action: {
+                text: 'Отменить',
+                textColor: '#4CA64B',
+                onPress: () => { /* Do something. */ },
+            },
+        });
         // сменить баланс
     };
 
@@ -151,7 +171,7 @@ export class OrderHistoryScreen extends Component {
                     renderLeftHiddenItem={() => <TouchableOpacity  style={{
                         width: 400,
                         height: 150,
-                        backgroundColor: isLoading ? '#4CA64B' : 'red',
+                        backgroundColor: '#4CA64B',
                         marginTop: 5,
                     }} onPress={this.onPressLeft}>
                         <Icon name={'check-circle'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 20}}/>
@@ -168,7 +188,19 @@ export class OrderHistoryScreen extends Component {
                     onSwipeLeft={this.toPayedItems}
                     onSwipeRight={this.toDelayedItems}
                 />
+                {/*<Snackbar*/}
+                {/*    visible={true}*/}
+                {/*    // onDismiss={onDismissSnackBar}*/}
+                {/*    action={{*/}
+                {/*        label: 'Undo',*/}
+                {/*        onPress: () => {*/}
+
+                {/*        },*/}
+                {/*    }}>*/}
+                {/*    Hey there! I'm a Snackbar.*/}
+                {/*</Snackbar>*/}
             </View>
+
         );
     };
 }
