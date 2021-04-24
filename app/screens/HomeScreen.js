@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 import {Backdrop} from 'react-native-backdrop';
+import {rgbaColor} from "react-native-reanimated";
 
 const user = {
     balance: '1000000',
@@ -26,8 +27,11 @@ export function HomeScreen () {
         <SafeAreaView style={{flex: 1, backgroundColor: '#4CA64B'}}>
             <View style={styles.mainContainer}>
                 <View style={styles.upBar}>
+
                     <View style={styles.userView}>
-                        <Image source={require('./profile.png')} style={styles.avatar}/>
+                        <View style={styles.iconStyle}>
+                            <Image source={require('./profile.png')} style={styles.avatar}/>
+                        </View>
                         <Text style={styles.companyName}> {user.companyName} </Text>
                     </View>
                     <Text style={styles.balance}>
@@ -112,6 +116,12 @@ const styles = StyleSheet.create({
 
     mainContainer: {
         backgroundColor: '#4CA64B',
+    },
+
+    iconStyle: {
+        shadowColor: rgbaColor(0, 0, 0, 0.25),
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
     },
 
     userView: {
