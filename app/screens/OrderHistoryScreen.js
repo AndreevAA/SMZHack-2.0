@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, FlatList, View, StyleSheet} from 'react-native';
+import {Text, FlatList, View, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import {OrderListItem} from "../components/OrderListItem";
@@ -14,6 +14,14 @@ export class OrderHistoryScreen extends Component {
                 "completed" : "2021-10-11",
                 "price" : "15000",
                 "executors" : ["exe 1", "exe 2"],
+                "status" : "Новая",
+                "object" : "obj"
+            },
+            {
+                "title" : "name2",
+                "completed" : "2021-10-11",
+                "price" : "20000",
+                "executors" : ["exe 1"],
                 "status" : "Новая",
                 "object" : "obj"
             }
@@ -70,11 +78,10 @@ export class OrderHistoryScreen extends Component {
 
     render = () => {
         const {isLoading, list} = this.state;
-
         return (
-            <View style={styles.container}>
+            <View>
                 <SwipeActionList
-                    style={styles.list}
+                    style={styles.container}
                     data={list}
                     renderItem={this.renderItem}
                     keyExtractor={this.keyExtractor}
@@ -82,9 +89,17 @@ export class OrderHistoryScreen extends Component {
                     onRefresh={this.onRefresh}
                     onEndReached={this.onScrollToEnd}
                     onEndReachedThreshold={0.2}
-                    renderLeftHiddenItem={() => <View>
-                        <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 5}}/>
+                    renderLeftHiddenItem={() => <View  style={{        width: 400,
+                        height: 150, backgroundColor:'#4CA64B',         marginTop: 5,
+                    }}>
+                        <Icon name={'check-circle'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 20}}/>
                         </View>}
+                    renderRightHiddenItem={() =>  <View style={{        width: 400,
+                        height: 150, backgroundColor:'#BFD154',         marginTop: 5,
+                    }}>
+                        <Icon name={'inbox'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 320}}/>
+
+                    </View>}
                 />
             </View>
         );
@@ -93,7 +108,10 @@ export class OrderHistoryScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        padding:20,
+        marginTop: 10,
+        marginLeft: 20,
+        marginRight: 20,
+        marginBottom: 20,
+
     },
 });

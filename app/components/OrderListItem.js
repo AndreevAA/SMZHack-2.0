@@ -27,7 +27,7 @@ export class OrderListItem extends Component {
                         flexDirection: "row",
                     }}>
                         <Text style={styles.price}>{order.price} ₽</Text>
-                        <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 200}}/>
+                        <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 180}}/>
                         <Text style={styles.status}>{order.status}</Text>
                     </View>
                     <Text style={styles.title}>{order.title}</Text>
@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
         padding: 12,
         borderBottomColor: '#b0b0b0',
         borderBottomWidth: 0.4,
+        width: 400,
+        height: 150,
+        backgroundColor: 'white',
+        marginTop: 5,
     },
     price: {
         fontSize: 26,
@@ -65,7 +69,6 @@ const styles = StyleSheet.create({
         color: '#b0b0b0',
     },
     object: {
-        marginTop: 5,
         fontSize: 16,
     },
 });
