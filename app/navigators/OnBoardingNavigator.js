@@ -5,6 +5,7 @@ import {OnBoardingScreen} from '../screens/OnBoardingScreen';
 import {FooterTabs} from './FooterTabs';
 
 import { EntryScreen } from '../screens/EntryScreen';
+import { BlankScreen } from '../screens/BlankPage';
 
 const Stack = createStackNavigator();
 

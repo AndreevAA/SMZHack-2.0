@@ -1,7 +1,6 @@
 import React, {Component, useState} from 'react';
 import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native';
 
-
 const user = {
     balance: '1000000',
     companyName: 'OOO ФРЕШ ПРОДАКТС',
@@ -34,12 +33,6 @@ export class ProfileScreen extends Component {
         );
     };
 }
-
-{/* <Text
-onPress={() => {
-    this.props.navigation.navigate('HomeNav');
-}}
->{"Ну тут типа логин"}</Text> */}
 
 const styles = StyleSheet.create({
     container: {
@@ -92,7 +85,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 70,
         marginLeft: 85,
-        resizeMode: 'contain',
+        // resizeMode: 'contain',
         color:"black",
         fontWeight:"bold",
         fontSize: 20
