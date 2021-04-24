@@ -1,5 +1,6 @@
 import React, {Component, useState} from 'react';
 import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native';
+import {rgbaColor} from "react-native-reanimated";
 
 const user = {
     balance: '1000000',
@@ -11,9 +12,12 @@ export class ProfileScreen extends Component {
     render = () => {
         return (
             <View style={styles.container}>
-                <Image source={require('./profile.png')}
-                       style={styles.avatar}
-                />
+                <View style={styles.iconStyle}>
+                    <Image source={require('./profile.png')}
+                           style={styles.avatar}
+                    />
+                </View>
+                
                 <Text style={styles.name}>
                     OOO ФРЕШ ПРОДАКТС
                 </Text>
@@ -81,6 +85,13 @@ const styles = StyleSheet.create({
         marginLeft: 155,
         resizeMode: 'contain',
     },
+
+    iconStyle: {
+        shadowColor: rgbaColor(0, 0, 0, 0.25),
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+    },
+
     name: {
         marginTop: 10,
         marginBottom: 70,
