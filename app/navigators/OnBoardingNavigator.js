@@ -14,7 +14,7 @@ export const OnBoardingNavigator = () => {
         screenOptions={{
             headerShown: false
         }}>
-      <Stack.Screen name={'Onboarding'} component={OnBoardingScreen} />
+      {/* <Stack.Screen name={'Onboarding'} component={OnBoardingScreen} /> */}
       <Stack.Screen name={'Entry'} component={EntryScreen} />
       <Stack.Screen name={'HomeNav'} component={FooterTabs} />
     </Stack.Navigator>

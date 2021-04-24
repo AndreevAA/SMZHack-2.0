@@ -1,7 +1,5 @@
-import React, {Component, useState} from 'react';
-import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native';
-
-import {LoginScreen} from 'react-native-login-screen';
+import React, {Component} from 'react';
+import {StyleSheet, View, Image, Text, TextInput, TouchableOpacity} from 'react-native'
 
 const user = {
                 balance: '200000R',
@@ -40,12 +38,6 @@ export class EntryScreen extends Component {
     );
   };
 }
-
-{/* <Text
-onPress={() => {
-    this.props.navigation.navigate('HomeNav');
-}}
->{"Ну тут типа логин"}</Text> */}
 
 const styles = StyleSheet.create({
   container: {
@@ -106,32 +98,3 @@ const styles = StyleSheet.create({
     fontSize: 16
   }
 });
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: 'center',
-//   },
-
-//   mainContainer: {
-//     backgroundColor: '#00ff00',
-//   },
-
-//   userView: {
-//     flex: 1,
-//     alignItems: 'flex-start',
-//   },
-
-//   avatar: {
-//     margin: 10,
-//   },
-
-//   companyName: {
-//     margin: 5,
-//   },
-
-//   balance: {
-//     margin: 5
-//   }
-// });
