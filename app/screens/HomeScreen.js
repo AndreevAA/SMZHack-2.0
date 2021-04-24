@@ -138,6 +138,10 @@ export function HomeScreen () {
           borderTopEndRadius: 30,
         }}
         backdropStyle={{backgroundColor: '#fbccfb'}}
+        // beforeOpen={() => console.log('beforeOpen')}
+        // afterOpen={() => console.log('afterOpen')}
+        // beforeClose={() => console.log('beforeClose')}
+        // afterClose={() => console.log('afterClose')}
         closedHeight={440}>
         <OrderHistoryScreen />
       </Backdrop>

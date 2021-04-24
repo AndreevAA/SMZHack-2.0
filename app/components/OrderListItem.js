@@ -17,7 +17,6 @@ export class OrderListItem extends Component {
 
     render = () => {
         const {onPress, order} = this.props;
-        console.log("order " + Object.keys(order));
         return (
             <TouchableOpacity style={styles.container} onPress={onPress}>
                 <View style={styles.col}>
@@ -32,8 +31,8 @@ export class OrderListItem extends Component {
                     </View>
                     <Text style={styles.title}>{order.title}</Text>
                     <Text style={styles.date}>Выполнено {order.completed}</Text>
-                    <Text style={styles.object}>{order.object}</Text>
-                    <Text style={styles.object}>{order.executors.join(", ")}</Text>
+                    <Text style={styles.object}>Исполнитель: {order.object}</Text>
+                    <Text style={styles.object}>Объект: {order.executors.join(", ")}</Text>
                 </View>
             </TouchableOpacity>
         );
