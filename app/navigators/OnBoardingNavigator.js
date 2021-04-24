@@ -4,6 +4,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {OnBoardingScreen} from '../screens/OnBoardingScreen';
 import {FooterTabs} from './FooterTabs';
 
+
+
 import { EntryScreen } from '../screens/EntryScreen';
 import { BlankScreen } from '../screens/BlankPage';
 

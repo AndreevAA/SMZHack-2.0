@@ -7,10 +7,12 @@ import React, {Component} from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import {HomeScreen} from '../screens/HomeScreen';
+import {HomeNavigator} from './HomeNavigator';
 import { NewsNavigator } from './NewsNavigator';
 import {ProfileNavigator} from "./ProfileNavigator";
 import Ionicons from "react-native-vector-icons/Ionicons";
+
+import {HomeScreen} from '../screens/HomeScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +35,7 @@ export class FooterTabs extends Component {
                 return <Ionicons name={iconName} size={size} color={color} />;
             },
         })}>
-            <Tab.Screen name="Главная" component={HomeScreen}/>
+            <Tab.Screen name="Главная" component={HomeNavigator}/>
             <Tab.Screen name="Новости" component={NewsNavigator} />
             <Tab.Screen name="Профиль" component={ProfileNavigator} />
         </Tab.Navigator>

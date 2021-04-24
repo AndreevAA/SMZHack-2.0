@@ -11,23 +11,13 @@ import {rgbaColor} from "react-native-reanimated";
 
 import {OrderHistoryScreen} from './OrderHistoryScreen'
 
-// import { StoryContainer } from 'react-native-stories-view';
-
-// const images = [
-//   'https://s3.ap-south-1.amazonaws.com/hsdreams1/pins/2019/01/big/7d1e5e0b31a650b9314023921b9e161b.jpeg',
-//   'https://boostupliving.com/wp-content/uploads/2019/06/best-motivational-quote-mobile-wallpapers-53.jpg',
-//   'https://i.pinimg.com/originals/51/bd/4c/51bd4c1e72d5d6ae5f2a4f31e31d2ef5.jpg',
-//   'https://pumpernickelpixie.com/wp-content/uploads/2016/01/15-phone-wallpaper.jpg',
-//   'https://i.pinimg.com/originals/5a/f0/e5/5af0e538f7437fd13a73f7c96601ccb6.jpg',
-// ];
-
 const user = {
     balance: '1000000',
     companyName: 'OOO ФРЕШ ПРОДАКТС',
     avatar: {medium: './profile.png'}
 };
 
-export function HomeScreen () {
+export function HomeScreen ({navigation}) {
     const [visible, setVisible] = useState(false);
 
     const handleOpen = () => {
@@ -61,7 +51,7 @@ export function HomeScreen () {
               width: 40,
               bottom: 15,
           }}
-          onPress={()=>{this.props.navigation.navigate('Blank')}}>
+          onPress={()=>{navigation.navigate('Blank')}}>
           {
             <Text
               style={{
@@ -84,32 +74,25 @@ export function HomeScreen () {
           <Icon name={"bell-o"} color={'#4CA64B'} size={24} style={{marginTop: 6, marginLeft: 6}}/>
         </TouchableOpacity> 
         <View>
-          {/* <StoryContainer
-            visible={true}
-            enableProgress={true}
-            images={images}
-            duration={20}  
-            onComplete={() => alert("onComplete")}
-            containerStyle={{
-                width: '100%',
-                height: '100%',
-            }}
-          /> */}
           <ScrollView horizontal={true}>
+            <TouchableOpacity 
+              onPress={navigation.navigate('Story')}
+            >
+              <Image 
+                source={require('../images/1.jpg')}
+                style={styles.storyImage}
+              />
+            </TouchableOpacity>
             <Image 
-              source={require('../assets/images/square.png')}
+              source={require('../images/2.jpg')}
               style={styles.storyImage}
             />
             <Image 
-              source={require('../assets/images/square.png')}
+              source={require('../images/3.jpg')}
               style={styles.storyImage}
             />
             <Image 
-              source={require('../assets/images/square.png')}
-              style={styles.storyImage}
-            />
-            <Image 
-              source={require('../assets/images/square.png')}
+              source={require('../images/2.jpg')}
               style={styles.storyImage}
             />
           </ScrollView>

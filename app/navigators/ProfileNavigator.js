@@ -13,7 +13,7 @@ export const ProfileNavigator = () => {
             headerShown: false
         }} initialRouteName={'Профиль'} >
             <Stack.Screen name={'Профиль'} component={ProfileScreen} />
-            <Stack.Screen name={'История заказов'} component={BlankScreen} />
+            <Stack.Screen name={'История заказов'} component={OrderHistoryScreen} />
             <Stack.Screen name={'Настройки'} component={BlankScreen} />
             <Stack.Screen name={'Выйти'} component={BlankScreen} />
         </Stack.Navigator>

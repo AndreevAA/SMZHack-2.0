@@ -44,6 +44,42 @@ export class OrderHistoryScreen extends Component {
                     "executors" : ["Андрей Н. Г", "Николай Н. Г", "..."],
                     "status" : "Новая",
                     "object" : "(без объекта)"
+                },
+                {
+                    "id" : "5",
+                    "title" : "Работник торгого зала",
+                    "completed" : "2021.10.11",
+                    "price" : "15 000",
+                    "executors" : ["Андреев А.А"],
+                    "status" : "Новая",
+                    "object" : "ТРЦ Филион"
+                },
+                {
+                    "id" : "6",
+                    "title" : "Услуги по консультированию клинентов",
+                    "completed" : "2021.10.11",
+                    "price" : "20 000",
+                    "executors" : ["Елисеев В.А"],
+                    "status" : "Новая",
+                    "object" : "ТРЦ Филион"
+                },
+                {
+                    "id" : "7",
+                    "title" : "Создание сайта",
+                    "completed" : "2021.10.21",
+                    "price" : "60 000",
+                    "executors" : ["Анна Н. Г."],
+                    "status" : "Новая",
+                    "object" : "(без объекта)"
+                },
+                {
+                    "id" : "8",
+                    "title" : "Группа: (5) Разработка мобильного приложения",
+                    "completed" : "2021.10.11",
+                    "price" : "300 000",
+                    "executors" : ["Андрей Н. Г", "Николай Н. Г", "..."],
+                    "status" : "Новая",
+                    "object" : "(без объекта)"
                 }
             ],
             isLoading: false,
@@ -151,7 +187,7 @@ export class OrderHistoryScreen extends Component {
                     renderLeftHiddenItem={() => <TouchableOpacity  style={{
                         width: 400,
                         height: 150,
-                        backgroundColor: isLoading ? '#4CA64B' : 'red',
+                        backgroundColor: '#4CA64B',
                         marginTop: 5,
                     }} onPress={this.onPressLeft}>
                         <Icon name={'check-circle'} color={'white'} size={30} style={{marginTop: 60, marginLeft: 20}}/>

@@ -26,7 +26,7 @@ export class OrderListItem extends Component {
                         flexDirection: "row",
                     }}>
                         <Text style={styles.price}>{order.price} ₽</Text>
-                        <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 180}}/>
+                        <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 160}}/>
                         <Text style={styles.status}>{order.status}</Text>
                     </View>
                     <Text style={styles.title}>{order.title}</Text>
