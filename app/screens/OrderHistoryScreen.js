@@ -16,6 +16,30 @@ export class OrderHistoryScreen extends Component {
                 "executors" : ["exe 1", "exe 2"],
                 "status" : "Новая",
                 "object" : "obj"
+            },
+            {
+                "title" : "name",
+                "completed" : "2021-10-11",
+                "price" : "15000",
+                "executors" : ["exe 1", "exe 2"],
+                "status" : "Новая",
+                "object" : "obj"
+            },
+            {
+                "title" : "name",
+                "completed" : "2021-10-11",
+                "price" : "15000",
+                "executors" : ["exe 1", "exe 2"],
+                "status" : "Новая",
+                "object" : "obj"
+            },
+            {
+                "title" : "name",
+                "completed" : "2021-10-11",
+                "price" : "15000",
+                "executors" : ["exe 1", "exe 2"],
+                "status" : "Новая",
+                "object" : "obj"
             }
         ],
         isLoading: false,
@@ -54,7 +78,7 @@ export class OrderHistoryScreen extends Component {
     };
 
     onItemPress = (item) => {
-        this.props.navigation.navigate('Новость', {order: item});
+        this.props.navigation.navigate('Blank', {order: item});
     };
 
     keyExtractor = (order) => order.id;
@@ -63,7 +87,7 @@ export class OrderHistoryScreen extends Component {
         return (
             <OrderListItem
                 order={item}
-                onPress={this.onItemPress.bind(this, item)}
+                // onPress={this.onItemPress.bind(this, item)}
             />
         );
     };
@@ -78,13 +102,14 @@ export class OrderHistoryScreen extends Component {
                     data={list}
                     renderItem={this.renderItem}
                     keyExtractor={this.keyExtractor}
-                    refreshing={isLoading}
-                    onRefresh={this.onRefresh}
+                    // refreshing={isLoading}
+                    // onRefresh={this.onRefresh}
                     onEndReached={this.onScrollToEnd}
                     onEndReachedThreshold={0.2}
                     renderLeftHiddenItem={() => <View>
                         <Icon name={"circle"}  color={'#4CA64B'} size={16} style={{marginLeft: 5}}/>
                         </View>}
+                    renderRightHiddenItem={() => <View></View>}
                 />
             </View>
         );

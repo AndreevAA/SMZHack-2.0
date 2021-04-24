@@ -3,7 +3,12 @@ import {SafeAreaView, StyleSheet, View, Image, Text, TouchableOpacity, ScrollVie
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
+import {OrderListItem} from "../components/OrderListItem";
+import SwipeActionList from 'react-native-swipe-action-list';
+
 import {Backdrop} from 'react-native-backdrop';
+
+import {OrderHistoryScreen} from './OrderHistoryScreen'
 
 const user = {
                 balance: '1000000',
@@ -96,9 +101,7 @@ export function HomeScreen () {
         beforeClose={() => console.log('beforeClose')}
         afterClose={() => console.log('afterClose')}
         closedHeight={440}>
-        <ScrollView>
-          <Text>Карточка с оплатой 1</Text>
-        </ScrollView>
+        <OrderHistoryScreen />
       </Backdrop>
     </SafeAreaView>
   );
