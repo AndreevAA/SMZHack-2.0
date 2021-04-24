@@ -32,6 +32,7 @@
     "react-native-screens": "^3.1.1",
     "react-native-shadow": "^1.2.2",
     "react-native-spinkit": "^1.5.1",
+    "react-native-stories-view": "^1.0.7",
     "react-native-swipe-action-list": "0.0.6",
     "react-native-vector-icons": "latest",
     "react-native-web": "^0.15.7",
