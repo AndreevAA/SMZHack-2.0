@@ -7,25 +7,26 @@ import {OrderListItem} from "../components/OrderListItem";
 import SwipeActionList from 'react-native-swipe-action-list';
 
 import {Backdrop} from 'react-native-backdrop';
+import {rgbaColor} from "react-native-reanimated";
 
 import {OrderHistoryScreen} from './OrderHistoryScreen'
 
 const user = {
-                balance: '1000000',
-                companyName: 'OOO ФРЕШ ПРОДАКТС',
-                avatar: {medium: './profile.png'}
+    balance: '1000000',
+    companyName: 'OOO ФРЕШ ПРОДАКТС',
+    avatar: {medium: './profile.png'}
 };
 
 export function HomeScreen () {
-  const [visible, setVisible] = useState(false);
-  
-  const handleOpen = () => {
-    setVisible(true);
-  };
+    const [visible, setVisible] = useState(false);
 
-  const handleClose = () => {
-    setVisible(false);
-  };
+    const handleOpen = () => {
+        setVisible(true);
+    };
+
+    const handleClose = () => {
+      setVisible(false);
+    };
 
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#4CA64B'}}>
@@ -108,39 +109,45 @@ export function HomeScreen () {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-  },
+    container: {
+        flex: 1,
+        alignItems: 'center',
+    },
 
-  mainContainer: {
-    backgroundColor: '#4CA64B',
-  },
+    mainContainer: {
+        backgroundColor: '#4CA64B',
+    },
 
-  userView: {
-    flex: 1,
-    alignItems: 'center',
-    flexDirection: "row",
-    marginTop: 50,
-    marginLeft: 10,
-  },
+    iconStyle: {
+        shadowColor: rgbaColor(0, 0, 0, 0.25),
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+    },
 
-  avatar: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
-  },
+    userView: {
+        flex: 1,
+        alignItems: 'center',
+        flexDirection: "row",
+        marginTop: 50,
+        marginLeft: 10,
+    },
 
-  companyName: {
-    marginLeft: 10,
-    fontSize: 20,
-    fontWeight: "bold",
-    color: '#FFFFFF'
-  },
+    avatar: {
+        width: 50,
+        height: 50,
+        resizeMode: 'contain',
+    },
 
-  balance: {
-    marginLeft: 60,
-    marginTop: 10,
-    color: '#FFFFFF'
-  }
+    companyName: {
+        marginLeft: 10,
+        fontSize: 20,
+        fontWeight: "bold",
+        color: '#FFFFFF'
+    },
+
+    balance: {
+        marginLeft: 60,
+        marginTop: 10,
+        color: '#FFFFFF'
+    }
 });
