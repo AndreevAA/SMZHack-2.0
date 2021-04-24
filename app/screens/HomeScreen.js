@@ -11,6 +11,16 @@ import {rgbaColor} from "react-native-reanimated";
 
 import {OrderHistoryScreen} from './OrderHistoryScreen'
 
+// import { StoryContainer } from 'react-native-stories-view';
+
+// const images = [
+//   'https://s3.ap-south-1.amazonaws.com/hsdreams1/pins/2019/01/big/7d1e5e0b31a650b9314023921b9e161b.jpeg',
+//   'https://boostupliving.com/wp-content/uploads/2019/06/best-motivational-quote-mobile-wallpapers-53.jpg',
+//   'https://i.pinimg.com/originals/51/bd/4c/51bd4c1e72d5d6ae5f2a4f31e31d2ef5.jpg',
+//   'https://pumpernickelpixie.com/wp-content/uploads/2016/01/15-phone-wallpaper.jpg',
+//   'https://i.pinimg.com/originals/5a/f0/e5/5af0e538f7437fd13a73f7c96601ccb6.jpg',
+// ];
+
 const user = {
     balance: '1000000',
     companyName: 'OOO ФРЕШ ПРОДАКТС',
@@ -72,7 +82,38 @@ export function HomeScreen () {
               </Text>
           }
           <Icon name={"bell-o"} color={'#4CA64B'} size={24} style={{marginTop: 6, marginLeft: 6}}/>
-        </TouchableOpacity>        
+        </TouchableOpacity> 
+        <View>
+          {/* <StoryContainer
+            visible={true}
+            enableProgress={true}
+            images={images}
+            duration={20}  
+            onComplete={() => alert("onComplete")}
+            containerStyle={{
+                width: '100%',
+                height: '100%',
+            }}
+          /> */}
+          <ScrollView horizontal={true}>
+            <Image 
+              source={require('../assets/images/square.png')}
+              style={styles.storyImage}
+            />
+            <Image 
+              source={require('../assets/images/square.png')}
+              style={styles.storyImage}
+            />
+            <Image 
+              source={require('../assets/images/square.png')}
+              style={styles.storyImage}
+            />
+            <Image 
+              source={require('../assets/images/square.png')}
+              style={styles.storyImage}
+            />
+          </ScrollView>
+        </View>
       </View>
       <Backdrop
         visible={visible}
@@ -97,10 +138,6 @@ export function HomeScreen () {
           borderTopEndRadius: 30,
         }}
         backdropStyle={{backgroundColor: '#fbccfb'}}
-        beforeOpen={() => console.log('beforeOpen')}
-        afterOpen={() => console.log('afterOpen')}
-        beforeClose={() => console.log('beforeClose')}
-        afterClose={() => console.log('afterClose')}
         closedHeight={440}>
         <OrderHistoryScreen />
       </Backdrop>
@@ -112,6 +149,18 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: 'center',
+    },
+
+    upBar: {
+      
+    },
+
+    storyImage: {
+      height: 135,
+      width: 135,
+      margin: 10,
+      marginTop: 0,
+      borderRadius: 5,  
     },
 
     mainContainer: {
