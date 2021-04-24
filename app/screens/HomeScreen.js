@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const user = {
                 balance: '1000000',
-                companyName: 'OOO Клинер Инвестмент',
+                companyName: 'OOO ФРЕШ ПРОДАКТС',
                 avatar: {medium: './profile.png'}
 };
 

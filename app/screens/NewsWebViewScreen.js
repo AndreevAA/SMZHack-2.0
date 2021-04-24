@@ -3,14 +3,14 @@ import {StyleSheet, View, Text} from 'react-native';
 import { WebView } from 'react-native-webview';
 
 export class NewsItemView extends Component {
-  renderRow = (cells) => {
-    return cells.map((cell) => (
-      <View style={styles.cell} key={cell.title}>
-        <Text style={styles.cellTitle}>{cell.title}</Text>
-        <Text style={styles.cellValue}>{cell.value}</Text>
-      </View>
-    ));
-  };
+  // renderRow = (cells) => {
+  //   return cells.map((cell) => (
+  //     <View style={styles.cell} key={cell.title}>
+  //       <Text style={styles.cellTitle}>{cell.title}</Text>
+  //       <Text style={styles.cellValue}>{cell.value}</Text>
+  //     </View>
+  //   ));
+  // };
 
   render = () => {
     const {post} = this.props.route.params;
