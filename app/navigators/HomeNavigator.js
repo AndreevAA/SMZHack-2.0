@@ -10,9 +10,9 @@ export const HomeNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{
         headerShown: false
-    }} initialRouteName={'Дом'}>
-      <Stack.Screen name={'Дом'} component={HomeScreen} />
-      <Stack.Screen name={'Story'} component={StoryScreen} />
+    }} initialRouteName={'Главная'}>
+      <Stack.Screen name={'Главная'} component={HomeScreen} />
+      <Stack.Screen name={'История'} component={StoryScreen} />
     </Stack.Navigator>
   );
 };

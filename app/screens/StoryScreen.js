@@ -4,9 +4,10 @@ import {View, Image} from 'react-native'
 
 export class StoryScreen extends Component {
     render = () => {
-      return (
+        const {story} = this.props;
+        return (
             <Image source={require('../assets/images/story.png')}
-                style={{
+                   style={{
                     flex:1,
                     justifyContent: 'space-evenly',
                     alignContent: 'stretch',

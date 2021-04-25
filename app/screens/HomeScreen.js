@@ -17,18 +17,22 @@ const user = {
     avatar: {medium: './profile.png'}
 };
 
-export function HomeScreen ({navigation}) {
-    const [visible, setVisible] = useState(false);
 
-    const handleOpen = () => {
-        setVisible(true);
+
+export class HomeScreen extends Component{
+
+    // [visible, setVisible] = useState(false);
+
+    handleOpen = () => {
+        // setVisible(true);
     };
 
-    const handleClose = () => {
-      setVisible(false);
+    handleClose = () => {
+        // setVisible(false);
     };
 
-  return (
+
+    render = () => (
     <SafeAreaView style={{flex: 1, backgroundColor: '#4CA64B'}}>
       <View style={styles.mainContainer}>
         <View style={styles.upBar}>
@@ -51,7 +55,7 @@ export function HomeScreen ({navigation}) {
               width: 40,
               bottom: 15,
           }}
-          onPress={()=>{navigation.navigate('Blank')}}>
+          onPress={()=>{this.props.navigation.navigate('Blank')}}>
           {
             <Text
               style={{
@@ -76,32 +80,44 @@ export function HomeScreen ({navigation}) {
         <View>
           <ScrollView horizontal={true}>
             <TouchableOpacity 
-              onPress={navigation.navigate('Story')}
+              onPress={() => this.props.navigation.navigate('История', {story: "../images/1.jpg"})}
             >
               <Image 
                 source={require('../images/1.jpg')}
                 style={styles.storyImage}
               />
             </TouchableOpacity>
+              <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('История', {story: "../images/2.jpg"})}
+              >
             <Image 
               source={require('../images/2.jpg')}
               style={styles.storyImage}
             />
+              </TouchableOpacity>
+              <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('История', {story: "../images/3.jpg"})}
+              >
             <Image 
               source={require('../images/3.jpg')}
               style={styles.storyImage}
             />
+              </TouchableOpacity>
+              <TouchableOpacity
+                  onPress={() => this.props.navigation.navigate('История', {story: "../images/2.jpg"})}
+              >
             <Image 
               source={require('../images/2.jpg')}
               style={styles.storyImage}
             />
+              </TouchableOpacity>
           </ScrollView>
         </View>
       </View>
       <Backdrop
-        visible={visible}
-        handleOpen={handleOpen}
-        handleClose={handleClose}
+        visible={this.props.visible}
+        handleOpen={this.handleOpen}
+        handleClose={this.handleClose}
         overlayColor={'rgba(0,0,0,0.0)'}
         header={
           <View style={{
@@ -130,7 +146,7 @@ export function HomeScreen ({navigation}) {
       </Backdrop>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
     container: {
