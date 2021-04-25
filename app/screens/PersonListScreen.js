@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
 import {FlatList, View, StyleSheet} from 'react-native';
-import {PersonListItem} from '../components/PersonListItem';
 
-export class PersonListScreen extends Component {
+import {NewsListItem} from '../components/PersonListItem';
+
+import * as rssParser from 'react-native-rss-parser';
+
+export class NewsListScreen extends Component {
   state = {
     list: [],
     isLoading: false,
@@ -16,13 +19,14 @@ export class PersonListScreen extends Component {
     const limit = 15;
     const offset = isRefreshing ? 0 : this.state.list.length;
     const page = Math.ceil(offset / limit) + 1;
-    fetch(`https://randomuser.me/api/?seed=foobar&results=15&page=${page}`)
-      .then((r) => r.json())
-      .then((json) => {
+    fetch(`http://static.feed.rbc.ru/rbc/logical/footer/news.rss`)
+        .then((response) => response.text())
+        .then((responseData) => rssParser.parse(responseData))
+        .then((rss) => {
         this.setState({
           list: isRefreshing
-            ? json.results
-            : this.state.list.concat(json.results),
+            ? rss.items
+            : this.state.list.concat(rss.items),
         });
       })
       .catch((e) => {
@@ -39,15 +43,15 @@ export class PersonListScreen extends Component {
   };
 
   onItemPress = (item) => {
-    this.props.navigation.navigate('info', {person: item});
+    this.props.navigation.navigate('Новость', {post: item});
   };
 
-  keyExtractor = (person) => person.login.uuid;
+  keyExtractor = (post) => post.id;
 
   renderItem = ({item}) => {
     return (
-      <PersonListItem
-        person={item}
+      <NewsListItem
+        post={item}
         onPress={this.onItemPress.bind(this, item)}
       />
     );
@@ -76,5 +80,6 @@ export class PersonListScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:20,
   },
 });
